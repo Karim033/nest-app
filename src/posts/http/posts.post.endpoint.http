@@ -1,0 +1,17 @@
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImVtYWlsIjoibWFya0Bkb2UuY29tIiwiaWF0IjoxNzI0NjcyMjI2LCJleHAiOjE3MjQ4ODgyMjYsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.eV7hxn6CpLTdI7l0UySNglPNe3gJnthaaN2lwScC4Go
+{
+    "title":"What's new with NestJS",
+    "postType":"post",
+    "slug":"new-with-nestjs-15",
+    "status":"draft",
+    "content":"test content",
+    "schema": "{\r\n    \"@context\": \"https:\/\/schema.org\",\r\n    \"@type\": \"Person\"\r\n  }",
+    "featuredImageUrl": "http://localhost.com/images/image1.jpg",
+    "tags":["nestjs" , "typescropt"],
+    "metaOptions":{
+            "metaValue":"{\"sidebarEnables\":true , \"footerActive\":true}"
+        },
+    "tags":[1]
+}
