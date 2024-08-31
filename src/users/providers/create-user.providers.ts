@@ -73,11 +73,11 @@ export class CreateUserProviders {
         },
       );
     }
-    try {
-      await this.mailService.sendUserWelcome(newUser);
-    } catch (error) {
-      throw new RequestTimeoutException(error);
-    }
+    // try {
+    //   await this.mailService.sendUserWelcome(newUser);
+    // } catch (error) {
+    //   throw new RequestTimeoutException(error);
+    // }
     return newUser;
   }
 }
