@@ -22,10 +22,6 @@ import { ActiveUserData } from 'src/auth/interfaces/active-user-data.interface';
 export class PostsService {
   constructor(
     /**
-     * Injecting User Service
-     */
-    private readonly usersService: UsersService,
-    /**
      * Injecting Post Repository
      */
     @InjectRepository(Post)

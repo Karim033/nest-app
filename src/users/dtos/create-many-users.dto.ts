@@ -9,6 +9,11 @@ export class CreateManyUsersDto {
     required: true,
     items: {
       type: 'User',
+      example: {
+        name: 'John',
+        email: 'johndoe@me.com',
+        password: '123456',
+      },
     },
   })
   @IsNotEmpty()

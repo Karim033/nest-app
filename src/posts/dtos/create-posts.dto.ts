@@ -18,7 +18,6 @@ import { postType } from '../enums/postType.enum';
 import { postStatus } from '../enums/status.enum';
 import { CreatePostMetaOptionsDto } from '../../meta-options/dtos/create-post-metaOption.dto';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { Tag } from 'src/tags/tag.entity';
 export class CreatePostDto {
   @ApiProperty({
     description: 'This is the title of blog post',

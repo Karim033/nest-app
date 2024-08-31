@@ -8,14 +8,12 @@ import {
   Patch,
   Post,
   Query,
-  Req,
 } from '@nestjs/common';
 import { PostsService } from './providers/posts.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { CreatePostDto } from './dtos/create-posts.dto';
 import { PatchPostDto } from './dtos/patch-post.dto';
 import { GetPostsDto } from './dtos/get-posts.dto';
-import { REQUEST_USER_KEY } from 'src/auth/constants/auth.constatns';
 import { AcitveUser } from 'src/auth/decorators/active-user.decorator';
 import { ActiveUserData } from 'src/auth/interfaces/active-user-data.interface';
 
@@ -24,6 +22,13 @@ import { ActiveUserData } from 'src/auth/interfaces/active-user-data.interface';
 export class PostsController {
   constructor(private readonly postService: PostsService) {}
 
+  @ApiOperation({
+    summary: 'Fetch specific blog posts with id',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Post fetched successfully',
+  })
   @Get('/:userId?')
   public getPosts(
     @Param('userId') userId: string,
@@ -59,6 +64,13 @@ export class PostsController {
     return this.postService.update(patchPostDto);
   }
 
+  @ApiOperation({
+    summary: 'Deletes an existing blog post',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'A 200 response if your post is Deleted successfully',
+  })
   @Delete()
   public deletePost(@Query('id', ParseIntPipe) id: number) {
     return this.postService.delete(id);
