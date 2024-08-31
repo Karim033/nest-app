@@ -28,6 +28,10 @@ export function appCreate(app: INestApplication): void {
       'https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt',
     )
     .addServer('http://localhost:3000', 'Localhost')
+    .addServer(
+      'http://ec2-51-20-129-213.eu-north-1.compute.amazonaws.com',
+      'Amazon Web Service EC2',
+    )
     .setVersion('1.0')
     .build();
   // Instantiate Swagger
